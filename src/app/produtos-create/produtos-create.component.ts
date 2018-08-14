@@ -4,9 +4,9 @@ import { ApiService } from '../api.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-book-create',
-  templateUrl: './book-create.component.html',
-  styleUrls: ['./book-create.component.css']
+  selector: 'app-produtos-create',
+  templateUrl: './produtos-create.component.html',
+  styleUrls: ['./produtos-create.component.css']
 })
 export class BookCreateComponent implements OnInit {
 

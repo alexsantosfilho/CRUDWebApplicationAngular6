@@ -187,7 +187,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _book_book_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./book/book.component */ "./src/app/book/book.component.ts");
 /* harmony import */ var _book_detail_book_detail_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./book-detail/book-detail.component */ "./src/app/book-detail/book-detail.component.ts");
-/* harmony import */ var _book_create_book_create_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./book-create/book-create.component */ "./src/app/book-create/book-create.component.ts");
+/* harmony import */ var _produtos_create_produtos_create_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./produtos-create/produtos-create.component */ "./src/app/produtos-create/produtos-create.component.ts");
 /* harmony import */ var _book_edit_book_edit_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./book-edit/book-edit.component */ "./src/app/book-edit/book-edit.component.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
@@ -211,7 +211,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var appRoutes = [
     {
-        path: 'books',
+        path: 'produtos',
         component: _book_book_component__WEBPACK_IMPORTED_MODULE_6__["BookComponent"],
         data: { title: 'Book List' }
     },
@@ -221,8 +221,8 @@ var appRoutes = [
         data: { title: 'Book Details' }
     },
     {
-        path: 'book-create',
-        component: _book_create_book_create_component__WEBPACK_IMPORTED_MODULE_8__["BookCreateComponent"],
+        path: 'produtos-create',
+        component: _produtos_create_produtos_create_component__WEBPACK_IMPORTED_MODULE_8__["BookCreateComponent"],
         data: { title: 'Create Book' }
     },
     {
@@ -231,7 +231,7 @@ var appRoutes = [
         data: { title: 'Edit Book' }
     },
     { path: '',
-        redirectTo: '/books',
+        redirectTo: '/produtos',
         pathMatch: 'full'
     }
 ];
@@ -244,7 +244,7 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                 _book_book_component__WEBPACK_IMPORTED_MODULE_6__["BookComponent"],
                 _book_detail_book_detail_component__WEBPACK_IMPORTED_MODULE_7__["BookDetailComponent"],
-                _book_create_book_create_component__WEBPACK_IMPORTED_MODULE_8__["BookCreateComponent"],
+                _produtos_create_produtos_create_component__WEBPACK_IMPORTED_MODULE_8__["BookCreateComponent"],
                 _book_edit_book_edit_component__WEBPACK_IMPORTED_MODULE_9__["BookEditComponent"]
             ],
             imports: [
@@ -275,102 +275,6 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/book-create/book-create.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/book-create/book-create.component.css ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".example-form {\r\n  min-width: 150px;\r\n  max-width: 500px;\r\n  width: 100%;\r\n}\r\n\r\n.example-full-width {\r\n  width: 100%;\r\n}\r\n\r\n.example-full-width:nth-last-child() {\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.button-row {\r\n  margin: 10px 0;\r\n}\r\n"
-
-/***/ }),
-
-/***/ "./src/app/book-create/book-create.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/book-create/book-create.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/books']\"><mat-icon>list</mat-icon></a>\r\n</div>\r\n<form [formGroup]=\"bookForm\" (ngSubmit)=\"onFormSubmit(bookForm.value)\">\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Id Canal\" formControlName=\"isbn\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('isbn').valid && bookForm.get('isbn').touched\">Please enter Id Canal</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Sku\" formControlName=\"title\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('title').valid && bookForm.get('title').touched\">Please enter Book Sku</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Quantidade\" formControlName=\"author\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('author').valid && bookForm.get('author').touched\">Please enter Book Quantidade</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <textarea matInput placeholder=\"Data\" formControlName=\"description\"\r\n           [errorStateMatcher]=\"matcher\"></textarea>\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('description').valid && bookForm.get('description').touched\">Please enter Book Data</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Publisher\" formControlName=\"publisher\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('publisher').valid && bookForm.get('publisher').touched\">Please enter Publisher</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Published Year\" formControlName=\"published_year\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('published_year').valid && bookForm.get('published_year').touched\">Please enter Published Year</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <div class=\"button-row\">\r\n    <button type=\"submit\" [disabled]=\"!bookForm.valid\" mat-raised-button color=\"primary\"><mat-icon>save</mat-icon></button>\r\n  </div>\r\n</form>\r\n"
-
-/***/ }),
-
-/***/ "./src/app/book-create/book-create.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/book-create/book-create.component.ts ***!
-  \******************************************************/
-/*! exports provided: BookCreateComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookCreateComponent", function() { return BookCreateComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api.service */ "./src/app/api.service.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var BookCreateComponent = /** @class */ (function () {
-    function BookCreateComponent(router, api, formBuilder) {
-        this.router = router;
-        this.api = api;
-        this.formBuilder = formBuilder;
-        this.isbn = '';
-        this.title = '';
-        this.description = '';
-        this.author = '';
-        this.publisher = '';
-        this.published_year = '';
-    }
-    BookCreateComponent.prototype.ngOnInit = function () {
-        this.bookForm = this.formBuilder.group({
-            'isbn': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'title': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'description': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'author': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'publisher': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'published_year': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
-        });
-    };
-    BookCreateComponent.prototype.onFormSubmit = function (form) {
-        var _this = this;
-        this.api.postBook(form)
-            .subscribe(function (res) {
-            var id = res['_id'];
-            _this.router.navigate(['/book-details', id]);
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    BookCreateComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-book-create',
-            template: __webpack_require__(/*! ./book-create.component.html */ "./src/app/book-create/book-create.component.html"),
-            styles: [__webpack_require__(/*! ./book-create.component.css */ "./src/app/book-create/book-create.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
-    ], BookCreateComponent);
-    return BookCreateComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/book-detail/book-detail.component.css":
 /*!*******************************************************!*\
   !*** ./src/app/book-detail/book-detail.component.css ***!
@@ -389,7 +293,7 @@ module.exports = ".example-card {\r\n  max-width: 500px;\r\n}\r\n\r\n.button-row
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/books']\"><mat-icon>list</mat-icon></a>\r\n</div>\r\n<mat-card class=\"example-card\">\r\n  <mat-card-header>\r\n    <mat-card-title><h2>{{book.title}}</h2></mat-card-title>\r\n    <mat-card-subtitle>{{book.description}}</mat-card-subtitle>\r\n  </mat-card-header>\r\n  <mat-card-content>\r\n    <dl>\r\n      <dt>Id Canal:</dt>\r\n      <dd>{{book.isbn}}</dd>\r\n      <dt>Quantidade:</dt>\r\n      <dd>{{book.author}}</dd>\r\n      <dt>Publisher:</dt>\r\n      <dd>{{book.publisher}}</dd>\r\n      <dt>Publish Year:</dt>\r\n      <dd>{{book.published_year}}</dd>\r\n      <dt>Update Date:</dt>\r\n      <dd>{{book.updated_date | date}}</dd>\r\n    </dl>\r\n  </mat-card-content>\r\n  <mat-card-actions>\r\n    <a mat-raised-button color=\"primary\" [routerLink]=\"['/book-edit', book._id]\"><mat-icon>edit</mat-icon></a>\r\n    <a mat-raised-button color=\"warn\" (click)=\"deleteBook(book._id)\"><mat-icon>delete</mat-icon></a>\r\n  </mat-card-actions>\r\n</mat-card>\r\n"
+module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/produtos']\"><mat-icon>list</mat-icon></a>\r\n</div>\r\n<mat-card class=\"example-card\">\r\n  <mat-card-header>\r\n    <mat-card-title><h2>{{book.title}}</h2></mat-card-title>\r\n    <mat-card-subtitle>{{book.description}}</mat-card-subtitle>\r\n  </mat-card-header>\r\n  <mat-card-content>\r\n    <dl>\r\n      <dt>Id Canal:</dt>\r\n      <dd>{{book.isbn}}</dd>\r\n      <dt>Quantidade:</dt>\r\n      <dd>{{book.author}}</dd>\r\n      <dt>Publisher:</dt>\r\n      <dd>{{book.publisher}}</dd>\r\n      <dt>Publish Year:</dt>\r\n      <dd>{{book.published_year}}</dd>\r\n      <dt>Update Date:</dt>\r\n      <dd>{{book.updated_date | date}}</dd>\r\n    </dl>\r\n  </mat-card-content>\r\n  <mat-card-actions>\r\n    <a mat-raised-button color=\"primary\" [routerLink]=\"['/book-edit', book._id]\"><mat-icon>edit</mat-icon></a>\r\n    <a mat-raised-button color=\"warn\" (click)=\"deleteBook(book._id)\"><mat-icon>delete</mat-icon></a>\r\n  </mat-card-actions>\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -440,7 +344,7 @@ var BookDetailComponent = /** @class */ (function () {
         var _this = this;
         this.api.deleteBook(id)
             .subscribe(function (res) {
-            _this.router.navigate(['/books']);
+            _this.router.navigate(['/produtos']);
         }, function (err) {
             console.log(err);
         });
@@ -594,7 +498,7 @@ module.exports = ".example-container {\r\n  display: flex;\r\n  flex-direction: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/book-create']\"><mat-icon>add</mat-icon></a>\r\n</div>\r\n<div class=\"example-container mat-elevation-z8\">\r\n  <table mat-table #table [dataSource]=\"dataSource\">\r\n\r\n    <!--- Note that these columns can be defined in any order.\r\n          The actual rendered columns are set as a property on the row definition\" -->\r\n\r\n    <!-- Sku Column -->\r\n    <ng-container matColumnDef=\"isbn\">\r\n      <th mat-header-cell *matHeaderCellDef> Id Canal </th>\r\n      <td mat-cell *matCellDef=\"let element\" class=\"isbn-col\"> {{element.isbn}} </td>\r\n    </ng-container>\r\n\r\n    <!-- Sku Column -->\r\n    <ng-container matColumnDef=\"title\">\r\n      <th mat-header-cell *matHeaderCellDef> Sku </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.title}} </td>\r\n    </ng-container>\r\n\r\n    <!-- Quantidade Column -->\r\n    <ng-container matColumnDef=\"author\">\r\n      <th mat-header-cell *matHeaderCellDef> Quantidade </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.author}} </td>\r\n    </ng-container>\r\n\r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\" [routerLink]=\"['/book-details/', row._id]\"></tr>\r\n  </table>\r\n</div>\r\n"
+module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/produtos-create']\"><mat-icon>add</mat-icon></a>\r\n</div>\r\n<div class=\"example-container mat-elevation-z8\">\r\n  <table mat-table #table [dataSource]=\"dataSource\">\r\n\r\n    <!--- Note that these columns can be defined in any order.\r\n          The actual rendered columns are set as a property on the row definition\" -->\r\n\r\n    <!-- Sku Column -->\r\n    <ng-container matColumnDef=\"isbn\">\r\n      <th mat-header-cell *matHeaderCellDef> Id Canal </th>\r\n      <td mat-cell *matCellDef=\"let element\" class=\"isbn-col\"> {{element.isbn}} </td>\r\n    </ng-container>\r\n\r\n    <!-- Sku Column -->\r\n    <ng-container matColumnDef=\"title\">\r\n      <th mat-header-cell *matHeaderCellDef> Sku </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.title}} </td>\r\n    </ng-container>\r\n\r\n    <!-- Quantidade Column -->\r\n    <ng-container matColumnDef=\"author\">\r\n      <th mat-header-cell *matHeaderCellDef> Quantidade </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.author}} </td>\r\n    </ng-container>\r\n\r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\" [routerLink]=\"['/book-details/', row._id]\"></tr>\r\n  </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -645,7 +549,7 @@ var BookComponent = /** @class */ (function () {
         this.api.getBooks()
             .subscribe(function (res) {
             console.log(res);
-            _this.books = res;
+            _this.produtos = res;
         }, function (err) {
             console.log(err);
         });
@@ -675,6 +579,102 @@ var BookDataSource = /** @class */ (function (_super) {
     };
     return BookDataSource;
 }(_angular_cdk_collections__WEBPACK_IMPORTED_MODULE_2__["DataSource"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/produtos-create/produtos-create.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/produtos-create/produtos-create.component.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".example-form {\r\n  min-width: 150px;\r\n  max-width: 500px;\r\n  width: 100%;\r\n}\r\n\r\n.example-full-width {\r\n  width: 100%;\r\n}\r\n\r\n.example-full-width:nth-last-child() {\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.button-row {\r\n  margin: 10px 0;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/produtos-create/produtos-create.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/produtos-create/produtos-create.component.html ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/produtos']\"><mat-icon>list</mat-icon></a>\r\n</div>\r\n<form [formGroup]=\"bookForm\" (ngSubmit)=\"onFormSubmit(bookForm.value)\">\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Id Canal\" formControlName=\"isbn\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('isbn').valid && bookForm.get('isbn').touched\">Please enter Id Canal</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Sku\" formControlName=\"title\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('title').valid && bookForm.get('title').touched\">Please enter Book Sku</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Quantidade\" formControlName=\"author\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('author').valid && bookForm.get('author').touched\">Please enter Book Quantidade</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <textarea matInput placeholder=\"Data\" formControlName=\"description\"\r\n           [errorStateMatcher]=\"matcher\"></textarea>\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('description').valid && bookForm.get('description').touched\">Please enter Book Data</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Publisher\" formControlName=\"publisher\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('publisher').valid && bookForm.get('publisher').touched\">Please enter Publisher</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Published Year\" formControlName=\"published_year\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('published_year').valid && bookForm.get('published_year').touched\">Please enter Published Year</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <div class=\"button-row\">\r\n    <button type=\"submit\" [disabled]=\"!bookForm.valid\" mat-raised-button color=\"primary\"><mat-icon>save</mat-icon></button>\r\n  </div>\r\n</form>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/produtos-create/produtos-create.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/produtos-create/produtos-create.component.ts ***!
+  \**************************************************************/
+/*! exports provided: BookCreateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookCreateComponent", function() { return BookCreateComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api.service */ "./src/app/api.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var BookCreateComponent = /** @class */ (function () {
+    function BookCreateComponent(router, api, formBuilder) {
+        this.router = router;
+        this.api = api;
+        this.formBuilder = formBuilder;
+        this.isbn = '';
+        this.title = '';
+        this.description = '';
+        this.author = '';
+        this.publisher = '';
+        this.published_year = '';
+    }
+    BookCreateComponent.prototype.ngOnInit = function () {
+        this.bookForm = this.formBuilder.group({
+            'isbn': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'title': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'description': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'author': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'publisher': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'published_year': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+        });
+    };
+    BookCreateComponent.prototype.onFormSubmit = function (form) {
+        var _this = this;
+        this.api.postBook(form)
+            .subscribe(function (res) {
+            var id = res['_id'];
+            _this.router.navigate(['/book-details', id]);
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    BookCreateComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-produtos-create',
+            template: __webpack_require__(/*! ./produtos-create.component.html */ "./src/app/produtos-create/produtos-create.component.html"),
+            styles: [__webpack_require__(/*! ./produtos-create.component.css */ "./src/app/produtos-create/produtos-create.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"], _api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
+    ], BookCreateComponent);
+    return BookCreateComponent;
+}());
 
 
 

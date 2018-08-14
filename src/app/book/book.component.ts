@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class BookComponent implements OnInit {
 
-  books: any;
+  produtos: any;
   displayedColumns = ['isbn', 'title', 'author'];
   dataSource = new BookDataSource(this.api);
 
@@ -20,7 +20,7 @@ export class BookComponent implements OnInit {
     this.api.getBooks()
       .subscribe(res => {
         console.log(res);
-        this.books = res;
+        this.produtos = res;
       }, err => {
         console.log(err);
       });
