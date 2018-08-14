@@ -3,31 +3,31 @@
 </div>
 <form [formGroup]="bookForm" (ngSubmit)="onFormSubmit(bookForm.value)">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="ISBN" formControlName="isbn"
+    <input matInput placeholder="Id Canal" formControlName="isbn"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!bookForm.get('isbn').valid && bookForm.get('isbn').touched">Please enter ISBN</span>
+      <span *ngIf="!bookForm.get('isbn').valid && bookForm.get('isbn').touched">Please enter Id Canal</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Title" formControlName="title"
+    <input matInput placeholder="Sku" formControlName="title"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!bookForm.get('title').valid && bookForm.get('title').touched">Please enter Book Title</span>
+      <span *ngIf="!bookForm.get('title').valid && bookForm.get('title').touched">Please enter Book Sku</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Author" formControlName="author"
+    <input matInput placeholder="Quantidade" formControlName="author"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!bookForm.get('author').valid && bookForm.get('author').touched">Please enter Book Author</span>
+      <span *ngIf="!bookForm.get('author').valid && bookForm.get('author').touched">Please enter Book Quantidade</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Description" formControlName="description"
+    <textarea matInput placeholder="Data" formControlName="description"
            [errorStateMatcher]="matcher"></textarea>
     <mat-error>
-      <span *ngIf="!bookForm.get('description').valid && bookForm.get('description').touched">Please enter Book Description</span>
+      <span *ngIf="!bookForm.get('description').valid && bookForm.get('description').touched">Please enter Book Data</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">

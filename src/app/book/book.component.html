@@ -7,21 +7,21 @@
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
-    <!-- Title Column -->
+    <!-- Sku Column -->
     <ng-container matColumnDef="isbn">
-      <th mat-header-cell *matHeaderCellDef> ISBN </th>
+      <th mat-header-cell *matHeaderCellDef> Id Canal </th>
       <td mat-cell *matCellDef="let element" class="isbn-col"> {{element.isbn}} </td>
     </ng-container>
 
-    <!-- Title Column -->
+    <!-- Sku Column -->
     <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <th mat-header-cell *matHeaderCellDef> Sku </th>
       <td mat-cell *matCellDef="let element"> {{element.title}} </td>
     </ng-container>
 
-    <!-- Author Column -->
+    <!-- Quantidade Column -->
     <ng-container matColumnDef="author">
-      <th mat-header-cell *matHeaderCellDef> Author </th>
+      <th mat-header-cell *matHeaderCellDef> Quantidade </th>
       <td mat-cell *matCellDef="let element"> {{element.author}} </td>
     </ng-container>
 
