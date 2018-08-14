@@ -29,7 +29,7 @@ export class BookComponent implements OnInit {
 
 export class BookDataSource extends DataSource<any> {
   constructor(private api: ApiService) {
-    super()
+    super();
   }
 
   connect() {
