@@ -16,8 +16,6 @@ export class BookEditComponent implements OnInit {
   title:string = '';
   description:string = '';
   author:string = '';
-  publisher:string = '';
-  published_year:string = '';
 
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
 
@@ -28,8 +26,6 @@ export class BookEditComponent implements OnInit {
       'title' : [null, Validators.required],
       'description' : [null, Validators.required],
       'author' : [null, Validators.required],
-      'publisher' : [null, Validators.required],
-      'published_year' : [null, Validators.required]
     });
   }
 
@@ -41,8 +37,6 @@ export class BookEditComponent implements OnInit {
         title: data.title,
         description: data.description,
         author: data.author,
-        publisher: data.publisher,
-        published_year: data.published_year
       });
     });
   }

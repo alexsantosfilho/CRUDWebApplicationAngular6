@@ -15,8 +15,6 @@ export class BookCreateComponent implements OnInit {
   title:string='';
   description:string='';
   author:string='';
-  publisher:string='';
-  published_year:string='';
 
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
 
@@ -26,8 +24,6 @@ export class BookCreateComponent implements OnInit {
       'title' : [null, Validators.required],
       'description' : [null, Validators.required],
       'author' : [null, Validators.required],
-      'publisher' : [null, Validators.required],
-      'published_year' : [null, Validators.required]
     });
   }
 
