@@ -4,20 +4,20 @@ import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css']
+  selector: 'app-produto',
+  templateUrl: './produto.component.html',
+  styleUrls: ['./produto.component.css']
 })
-export class BookComponent implements OnInit {
+export class ProdutoComponent implements OnInit {
 
   produtos: any;
   displayedColumns = ['idcanal', 'sku', 'data'];
-  dataSource = new BookDataSource(this.api);
+  dataSource = new ProdutoDataSource(this.api);
 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this.api.getBooks()
+    this.api.getProdutos()
       .subscribe(res => {
         console.log(res);
         this.produtos = res;
@@ -27,13 +27,13 @@ export class BookComponent implements OnInit {
   }
 }
 
-export class BookDataSource extends DataSource<any> {
+export class ProdutoDataSource extends DataSource<any> {
   constructor(private api: ApiService) {
     super();
   }
 
   connect() {
-    return this.api.getBooks();
+    return this.api.getProdutos();
   }
 
   disconnect() {

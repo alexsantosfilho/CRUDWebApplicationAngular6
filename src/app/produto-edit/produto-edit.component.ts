@@ -4,13 +4,13 @@ import { ApiService } from '../api.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-book-edit',
-  templateUrl: './book-edit.component.html',
-  styleUrls: ['./book-edit.component.css']
+  selector: 'app-produto-edit',
+  templateUrl: './porduto-edit.component.html',
+  styleUrls: ['./produto-edit.component.css']
 })
-export class BookEditComponent implements OnInit {
+export class ProdutoEditComponent implements OnInit {
 
-  bookForm: FormGroup;
+  produtoForm: FormGroup;
   id = '';
   idcanal = '';
   sku = '';
@@ -20,8 +20,8 @@ export class BookEditComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.getBook(this.route.snapshot.params['id']);
-    this.bookForm = this.formBuilder.group({
+    this.getProduto(this.route.snapshot.params['id']);
+    this.produtoForm = this.formBuilder.group({
       'idcanal' : [null, Validators.required],
       'sku' : [null, Validators.required],
       'quantidade' : [null, Validators.required],
@@ -29,10 +29,10 @@ export class BookEditComponent implements OnInit {
     });
   }
 
-  getBook(id) {
-    this.api.getBook(id).subscribe(data => {
+  getProduto(id) {
+    this.api.getProduto(id).subscribe(data => {
       this.id = data._id;
-      this.bookForm.setValue({
+      this.produtoForm.setValue({
         idcanal: data.idcanal,
         sku: data.sku,
         quantidade: data.quantidade,
@@ -42,17 +42,17 @@ export class BookEditComponent implements OnInit {
   }
 
   onFormSubmit(form: NgForm) {
-    this.api.updateBook(this.id, form)
+    this.api.updateProduto(this.id, form)
       .subscribe(res => {
           const id = res['_id'];
-          this.router.navigate(['/book-details', id]);
+          this.router.navigate(['/produto-details', id]);
         }, (err) => {
           console.log(err);
         }
       );
   }
 
-  bookDetails() {
-    this.router.navigate(['/book-details', this.id]);
+  produtoDetails() {
+    this.router.navigate(['/produto-details', this.id]);
   }
 }

@@ -3,30 +3,30 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
-  selector: 'app-book-detail',
-  templateUrl: './book-detail.component.html',
-  styleUrls: ['./book-detail.component.css']
+  selector: 'app-produto-detail',
+  templateUrl: './produto-detail.component.html',
+  styleUrls: ['./produto-detail.component.css']
 })
-export class BookDetailComponent implements OnInit {
+export class ProdutoDetailComponent implements OnInit {
 
-  book = {};
+  produto = {};
 
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
 
   ngOnInit() {
-    this.getBookDetails(this.route.snapshot.params['id']);
+    this.getProdutoDetails(this.route.snapshot.params['id']);
   }
 
-  getBookDetails(id) {
-    this.api.getBook(id)
+  getProdutoDetails(id) {
+    this.api.getProduto(id)
       .subscribe(data => {
         console.log(data);
-        this.book = data;
+        this.produto = data;
       });
   }
 
-  deleteBook(id) {
-    this.api.deleteBook(id)
+  deleteProduto(id) {
+    this.api.deleteProduto(id)
       .subscribe(res => {
           this.router.navigate(['/produtos']);
         }, (err) => {

@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost/mean-angular6')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
-var apiRouter = require('./routes/book');
+var apiRouter = require('./routes/produto');
 
 var app = express();
 

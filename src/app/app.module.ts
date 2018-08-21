@@ -5,10 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { BookComponent } from './book/book.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookCreateComponent } from './produtos-create/produtos-create.component';
-import { BookEditComponent } from './book-edit/book-edit.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoDetailComponent } from './produto-detail/produto-detail.component';
+import { ProdutoCreateComponent } from './produtos-create/produtos-create.component';
+import { ProdutoEditComponent } from './produto-edit/produto-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
@@ -25,23 +25,23 @@ import {
 const appRoutes: Routes = [
   {
     path: 'produtos',
-    component: BookComponent,
-    data: { sku: 'Book List' }
+    component: ProdutoComponent,
+    data: { sku: 'Produto List' }
   },
   {
-    path: 'book-details/:id',
-    component: BookDetailComponent,
-    data: { sku: 'Book Details' }
+    path: 'produto-details/:id',
+    component: ProdutoDetailComponent,
+    data: { sku: 'Produto Details' }
   },
   {
     path: 'produtos-create',
-    component: BookCreateComponent,
-    data: { sku: 'Create Book' }
+    component: ProdutoCreateComponent,
+    data: { sku: 'Create Produto' }
   },
   {
-    path: 'book-edit/:id',
-    component: BookEditComponent,
-    data: { sku: 'Edit Book' }
+    path: 'produto-edit/:id',
+    component: ProdutoEditComponent,
+    data: { sku: 'Edit Produto' }
   },
   { path: '',
     redirectTo: '/produtos',
@@ -52,10 +52,10 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
-    BookDetailComponent,
-    BookCreateComponent,
-    BookEditComponent
+    ProdutoComponent,
+    ProdutoDetailComponent,
+    ProdutoCreateComponent,
+    ProdutoEditComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

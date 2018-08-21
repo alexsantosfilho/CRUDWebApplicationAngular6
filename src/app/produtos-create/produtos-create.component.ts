@@ -8,9 +8,9 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
   templateUrl: './produtos-create.component.html',
   styleUrls: ['./produtos-create.component.css']
 })
-export class BookCreateComponent implements OnInit {
+export class ProdutoCreateComponent implements OnInit {
 
-  bookForm: FormGroup;
+  produtoForm: FormGroup;
   idcanal = '';
   sku = '';
   quantidade = '';
@@ -19,7 +19,7 @@ export class BookCreateComponent implements OnInit {
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.bookForm = this.formBuilder.group({
+    this.produtoForm = this.formBuilder.group({
       'idcanal' : [null, Validators.required],
       'sku' : [null, Validators.required],
       'quantidade' : [null, Validators.required],
@@ -28,10 +28,10 @@ export class BookCreateComponent implements OnInit {
   }
 
   onFormSubmit(form: NgForm) {
-    this.api.postBook(form)
+    this.api.postProduto(form)
       .subscribe(res => {
           const id = res['_id'];
-          this.router.navigate(['/book-details', id]);
+          this.router.navigate(['/produto-details', id]);
         }, (err) => {
           console.log(err);
         });

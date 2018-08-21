@@ -28,34 +28,34 @@ export class ApiService {
     }
     // return an observable with a user-facing error message
     return throwError('Something bad happened; please try again later.');
-  };
+  }
 
   private extractData(res: Response) {
     const body = res;
     return body || { };
   }
 
-  getBooks(): Observable<any> {
+  getProdutos(): Observable<any> {
     return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
 
-  getBook(id: string): Observable<any> {
+  getProduto(id: string): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.get(url, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
 
-  postBook(data): Observable<any> {
+  postProduto(data): Observable<any> {
     return this.http.post(apiUrl, data, httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  updateBook(id: string, data): Observable<any> {
+  updateProduto(id: string, data): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.put(url, data, httpOptions)
       .pipe(
@@ -63,7 +63,7 @@ export class ApiService {
       );
   }
 
-  deleteBook(id: string): Observable<{}> {
+  deleteProduto(id: string): Observable<{}> {
     const url = `${apiUrl}/${id}`;
     return this.http.delete(url, httpOptions)
       .pipe(
