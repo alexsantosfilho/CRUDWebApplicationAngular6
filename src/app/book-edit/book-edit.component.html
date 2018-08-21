@@ -17,10 +17,10 @@
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Quantidade" formControlName="author"
+    <input matInput placeholder="Quantidade" formControlName="data"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!bookForm.get('author').valid && bookForm.get('author').touched">Please enter Book Quantidade</span>
+      <span *ngIf="!bookForm.get('data').valid && bookForm.get('data').touched">Please enter Book Quantidade</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">

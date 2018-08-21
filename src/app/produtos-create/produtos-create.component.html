@@ -17,17 +17,17 @@
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Quantidade" formControlName="author"
+    <input matInput placeholder="Quantidade" formControlName="quantidade"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!bookForm.get('author').valid && bookForm.get('author').touched">Please enter Book Quantidade</span>
+      <span *ngIf="!bookForm.get('quantidade').valid && bookForm.get('quantidade').touched">Please enter Book Quantidade</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Data" formControlName="quantidade"
+    <textarea matInput placeholder="Data" formControlName="data"
            [errorStateMatcher]="matcher"></textarea>
     <mat-error>
-      <span *ngIf="!bookForm.get('quantidade').valid && bookForm.get('quantidade').touched">Please enter Book Data</span>
+      <span *ngIf="!bookForm.get('data').valid && bookForm.get('data').touched">Please enter Book Data</span>
     </mat-error>
   </mat-form-field>
   <div class="button-row">

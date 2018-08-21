@@ -14,7 +14,7 @@ export class BookCreateComponent implements OnInit {
   idcanal = '';
   sku = '';
   quantidade = '';
-  author = '';
+  data = '';
 
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
 
@@ -23,7 +23,7 @@ export class BookCreateComponent implements OnInit {
       'idcanal' : [null, Validators.required],
       'sku' : [null, Validators.required],
       'quantidade' : [null, Validators.required],
-      'author' : [null, Validators.required],
+      'data' : [null, Validators.required],
     });
   }
 

@@ -53,7 +53,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var httpOptions = {
     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' })
 };
-var apiUrl = "/api";
+var apiUrl = '/api';
 var ApiService = /** @class */ (function () {
     function ApiService(http) {
         this.http = http;
@@ -213,22 +213,22 @@ var appRoutes = [
     {
         path: 'produtos',
         component: _book_book_component__WEBPACK_IMPORTED_MODULE_6__["BookComponent"],
-        data: { title: 'Book List' }
+        data: { sku: 'Book List' }
     },
     {
         path: 'book-details/:id',
         component: _book_detail_book_detail_component__WEBPACK_IMPORTED_MODULE_7__["BookDetailComponent"],
-        data: { title: 'Book Details' }
+        data: { sku: 'Book Details' }
     },
     {
         path: 'produtos-create',
         component: _produtos_create_produtos_create_component__WEBPACK_IMPORTED_MODULE_8__["BookCreateComponent"],
-        data: { title: 'Create Book' }
+        data: { sku: 'Create Book' }
     },
     {
         path: 'book-edit/:id',
         component: _book_edit_book_edit_component__WEBPACK_IMPORTED_MODULE_9__["BookEditComponent"],
-        data: { title: 'Edit Book' }
+        data: { sku: 'Edit Book' }
     },
     { path: '',
         redirectTo: '/produtos',
@@ -293,7 +293,7 @@ module.exports = ".example-card {\r\n  max-width: 500px;\r\n}\r\n\r\n.button-row
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/produtos']\"><mat-icon>list</mat-icon></a>\r\n</div>\r\n<mat-card class=\"example-card\">\r\n  <mat-card-header>\r\n    <mat-card-title><h2>{{book.title}}</h2></mat-card-title>\r\n    <mat-card-subtitle>{{book.description}}</mat-card-subtitle>\r\n  </mat-card-header>\r\n  <mat-card-content>\r\n    <dl>\r\n      <dt>Id Canal:</dt>\r\n      <dd>{{book.isbn}}</dd>\r\n      <dt>Quantidade:</dt>\r\n      <dd>{{book.author}}</dd>\r\n      <dt>Update Date:</dt>\r\n      <dd>{{book.updated_date | date}}</dd>\r\n    </dl>\r\n  </mat-card-content>\r\n  <mat-card-actions>\r\n    <a mat-raised-button color=\"primary\" [routerLink]=\"['/book-edit', book._id]\"><mat-icon>edit</mat-icon></a>\r\n    <a mat-raised-button color=\"warn\" (click)=\"deleteBook(book._id)\"><mat-icon>delete</mat-icon></a>\r\n  </mat-card-actions>\r\n</mat-card>\r\n"
+module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/produtos']\"><mat-icon>list</mat-icon></a>\r\n</div>\r\n<mat-card class=\"example-card\">\r\n  <mat-card-header>\r\n    <mat-card-title><h2>{{book.title}}</h2></mat-card-title>\r\n    <mat-card-subtitle>{{book.quantidade}}</mat-card-subtitle>\r\n  </mat-card-header>\r\n  <mat-card-content>\r\n    <dl>\r\n      <dt>Id Canal:</dt>\r\n      <dd>{{book.isbn}}</dd>\r\n      <dt>Quantidade:</dt>\r\n      <dd>{{book.quantidade}}</dd>\r\n      <dt>Update Date:</dt>\r\n      <dd>{{book.dataAtualizada | date}}</dd>\r\n    </dl>\r\n  </mat-card-content>\r\n  <mat-card-actions>\r\n    <a mat-raised-button color=\"primary\" [routerLink]=\"['/book-edit', book._id]\"><mat-icon>edit</mat-icon></a>\r\n    <a mat-raised-button color=\"warn\" (click)=\"deleteBook(book._id)\"><mat-icon>delete</mat-icon></a>\r\n  </mat-card-actions>\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -382,7 +382,7 @@ module.exports = ".example-form {\r\n  min-width: 150px;\r\n  max-width: 500px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" (click)=\"bookDetails()\"><mat-icon>show</mat-icon></a>\r\n</div>\r\n<form [formGroup]=\"bookForm\" (ngSubmit)=\"onFormSubmit(bookForm.value)\">\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Id Canal\" formControlName=\"isbn\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('isbn').valid && bookForm.get('isbn').touched\">Please enter Id Canal</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Sku\" formControlName=\"title\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('title').valid && bookForm.get('title').touched\">Please enter Book Sku</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Quantidade\" formControlName=\"author\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('author').valid && bookForm.get('author').touched\">Please enter Book Quantidade</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <textarea matInput placeholder=\"Data\" formControlName=\"description\"\r\n           [errorStateMatcher]=\"matcher\"></textarea>\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('description').valid && bookForm.get('description').touched\">Please enter Book Data</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Publisher\" formControlName=\"publisher\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('publisher').valid && bookForm.get('publisher').touched\">Please enter Publisher</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Published Year\" formControlName=\"published_year\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('published_year').valid && bookForm.get('published_year').touched\">Please enter Published Year</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <div class=\"button-row\">\r\n    <button type=\"submit\" [disabled]=\"!bookForm.valid\" mat-raised-button color=\"primary\"><mat-icon>save</mat-icon></button>\r\n  </div>\r\n</form>\r\n"
+module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" (click)=\"bookDetails()\"><mat-icon>show</mat-icon></a>\r\n</div>\r\n<form [formGroup]=\"bookForm\" (ngSubmit)=\"onFormSubmit(bookForm.value)\">\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Id Canal\" formControlName=\"idcanal\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('idcanal').valid && bookForm.get('idcanal').touched\">Please enter Id Canal</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Sku\" formControlName=\"sku\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('sku').valid && bookForm.get('sku').touched\">Please enter Book Sku</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Quantidade\" formControlName=\"data\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('data').valid && bookForm.get('data').touched\">Please enter Book Quantidade</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <textarea matInput placeholder=\"Data\" formControlName=\"quantidade\"\r\n           [errorStateMatcher]=\"matcher\"></textarea>\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('quantidade').valid && bookForm.get('quantidade').touched\">Please enter Book Data</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Publisher\" formControlName=\"publisher\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('publisher').valid && bookForm.get('publisher').touched\">Please enter Publisher</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Published Year\" formControlName=\"published_year\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('published_year').valid && bookForm.get('published_year').touched\">Please enter Published Year</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <div class=\"button-row\">\r\n    <button type=\"submit\" [disabled]=\"!bookForm.valid\" mat-raised-button color=\"primary\"><mat-icon>save</mat-icon></button>\r\n  </div>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -420,18 +420,18 @@ var BookEditComponent = /** @class */ (function () {
         this.api = api;
         this.formBuilder = formBuilder;
         this.id = '';
-        this.isbn = '';
-        this.title = '';
-        this.description = '';
-        this.author = '';
+        this.idcanal = '';
+        this.sku = '';
+        this.quantidade = '';
+        this.data = '';
     }
     BookEditComponent.prototype.ngOnInit = function () {
         this.getBook(this.route.snapshot.params['id']);
         this.bookForm = this.formBuilder.group({
-            'isbn': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'title': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'description': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'author': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'idcanal': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'sku': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'quantidade': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'data': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
         });
     };
     BookEditComponent.prototype.getBook = function (id) {
@@ -439,10 +439,10 @@ var BookEditComponent = /** @class */ (function () {
         this.api.getBook(id).subscribe(function (data) {
             _this.id = data._id;
             _this.bookForm.setValue({
-                isbn: data.isbn,
-                title: data.title,
-                description: data.description,
-                author: data.author,
+                idcanal: data.idcanal,
+                sku: data.sku,
+                quantidade: data.quantidade,
+                data: data.data,
             });
         });
     };
@@ -481,7 +481,7 @@ var BookEditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".example-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  max-height: 500px;\r\n  min-width: 300px;\r\n  overflow: auto;\r\n}\r\n\r\n.isbn-col {\r\n  flex: 0 0 100px !important;\r\n  white-space: unset !important;\r\n}\r\n\r\n.button-row {\r\n  margin: 10px 0;\r\n}\r\n"
+module.exports = ".example-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  max-height: 500px;\r\n  min-width: 300px;\r\n  overflow: auto;\r\n}\r\n\r\n.idcanal-col {\r\n  flex: 0 0 100px !important;\r\n  white-space: unset !important;\r\n}\r\n\r\n.button-row {\r\n  margin: 10px 0;\r\n}\r\n"
 
 /***/ }),
 
@@ -492,7 +492,7 @@ module.exports = ".example-container {\r\n  display: flex;\r\n  flex-direction: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/produtos-create']\"><mat-icon>add</mat-icon></a>\r\n</div>\r\n<div class=\"example-container mat-elevation-z8\">\r\n  <table mat-table #table [dataSource]=\"dataSource\">\r\n\r\n    <!--- Note that these columns can be defined in any order.\r\n          The actual rendered columns are set as a property on the row definition\" -->\r\n\r\n    <!-- Sku Column -->\r\n    <ng-container matColumnDef=\"isbn\">\r\n      <th mat-header-cell *matHeaderCellDef> Id Canal </th>\r\n      <td mat-cell *matCellDef=\"let element\" class=\"isbn-col\"> {{element.isbn}} </td>\r\n    </ng-container>\r\n\r\n    <!-- Sku Column -->\r\n    <ng-container matColumnDef=\"title\">\r\n      <th mat-header-cell *matHeaderCellDef> Sku </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.title}} </td>\r\n    </ng-container>\r\n\r\n    <!-- Quantidade Column -->\r\n    <ng-container matColumnDef=\"author\">\r\n      <th mat-header-cell *matHeaderCellDef> Quantidade </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.author}} </td>\r\n    </ng-container>\r\n\r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\" [routerLink]=\"['/book-details/', row._id]\"></tr>\r\n  </table>\r\n</div>\r\n"
+module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/produtos-create']\"><mat-icon>add</mat-icon></a>\r\n</div>\r\n<div class=\"example-container mat-elevation-z8\">\r\n  <table mat-table #table [dataSource]=\"dataSource\">\r\n\r\n    <!--- Note that these columns can be defined in any order.\r\n          The actual rendered columns are set as a property on the row definition\" -->\r\n\r\n    <!-- Sku Column -->\r\n    <ng-container matColumnDef=\"idcanal\">\r\n      <th mat-header-cell *matHeaderCellDef> Id Canal </th>\r\n      <td mat-cell *matCellDef=\"let element\" class=\"idcanal-col\"> {{element.idcanal}} </td>\r\n    </ng-container>\r\n\r\n    <!-- Sku Column -->\r\n    <ng-container matColumnDef=\"sku\">\r\n      <th mat-header-cell *matHeaderCellDef> Sku </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.sku}} </td>\r\n    </ng-container>\r\n\r\n    <!-- Quantidade Column -->\r\n    <ng-container matColumnDef=\"data\">\r\n      <th mat-header-cell *matHeaderCellDef> Quantidade </th>\r\n      <td mat-cell *matCellDef=\"let element\"> {{element.data}} </td>\r\n    </ng-container>\r\n\r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\" [routerLink]=\"['/book-details/', row._id]\"></tr>\r\n  </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -535,7 +535,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var BookComponent = /** @class */ (function () {
     function BookComponent(api) {
         this.api = api;
-        this.displayedColumns = ['isbn', 'title', 'author'];
+        this.displayedColumns = ['idcanal', 'sku', 'data'];
         this.dataSource = new BookDataSource(this.api);
     }
     BookComponent.prototype.ngOnInit = function () {
@@ -596,7 +596,7 @@ module.exports = ".example-form {\r\n  min-width: 150px;\r\n  max-width: 500px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/produtos']\"><mat-icon>list</mat-icon></a>\r\n</div>\r\n<form [formGroup]=\"bookForm\" (ngSubmit)=\"onFormSubmit(bookForm.value)\">\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Id Canal\" formControlName=\"isbn\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('isbn').valid && bookForm.get('isbn').touched\">Please enter Id Canal</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Sku\" formControlName=\"title\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('title').valid && bookForm.get('title').touched\">Please enter Book Sku</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Quantidade\" formControlName=\"author\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('author').valid && bookForm.get('author').touched\">Please enter Book Quantidade</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <textarea matInput placeholder=\"Data\" formControlName=\"description\"\r\n           [errorStateMatcher]=\"matcher\"></textarea>\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('description').valid && bookForm.get('description').touched\">Please enter Book Data</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <div class=\"button-row\">\r\n    <button type=\"submit\" [disabled]=\"!bookForm.valid\" mat-raised-button color=\"primary\"><mat-icon>save</mat-icon></button>\r\n  </div>\r\n</form>\r\n"
+module.exports = "<div class=\"button-row\">\r\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/produtos']\"><mat-icon>list</mat-icon></a>\r\n</div>\r\n<form [formGroup]=\"bookForm\" (ngSubmit)=\"onFormSubmit(bookForm.value)\">\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Id Canal\" formControlName=\"idcanal\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('idcanal').valid && bookForm.get('idcanal').touched\">Please enter Id Canal</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Sku\" formControlName=\"sku\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('sku').valid && bookForm.get('sku').touched\">Please enter Book Sku</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Quantidade\" formControlName=\"quantidade\"\r\n           [errorStateMatcher]=\"matcher\">\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('quantidade').valid && bookForm.get('quantidade').touched\">Please enter Book Quantidade</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <textarea matInput placeholder=\"Data\" formControlName=\"data\"\r\n           [errorStateMatcher]=\"matcher\"></textarea>\r\n    <mat-error>\r\n      <span *ngIf=\"!bookForm.get('data').valid && bookForm.get('data').touched\">Please enter Book Data</span>\r\n    </mat-error>\r\n  </mat-form-field>\r\n  <div class=\"button-row\">\r\n    <button type=\"submit\" [disabled]=\"!bookForm.valid\" mat-raised-button color=\"primary\"><mat-icon>save</mat-icon></button>\r\n  </div>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -632,17 +632,17 @@ var BookCreateComponent = /** @class */ (function () {
         this.router = router;
         this.api = api;
         this.formBuilder = formBuilder;
-        this.isbn = '';
-        this.title = '';
-        this.description = '';
-        this.author = '';
+        this.idcanal = '';
+        this.sku = '';
+        this.quantidade = '';
+        this.data = '';
     }
     BookCreateComponent.prototype.ngOnInit = function () {
         this.bookForm = this.formBuilder.group({
-            'isbn': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'title': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'description': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'author': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'idcanal': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'sku': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'quantidade': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'data': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
         });
     };
     BookCreateComponent.prototype.onFormSubmit = function (form) {
