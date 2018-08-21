@@ -26,22 +26,22 @@ const appRoutes: Routes = [
   {
     path: 'produtos',
     component: BookComponent,
-    data: { title: 'Book List' }
+    data: { sku: 'Book List' }
   },
   {
     path: 'book-details/:id',
     component: BookDetailComponent,
-    data: { title: 'Book Details' }
+    data: { sku: 'Book Details' }
   },
   {
     path: 'produtos-create',
     component: BookCreateComponent,
-    data: { title: 'Create Book' }
+    data: { sku: 'Create Book' }
   },
   {
     path: 'book-edit/:id',
     component: BookEditComponent,
-    data: { title: 'Edit Book' }
+    data: { sku: 'Edit Book' }
   },
   { path: '',
     redirectTo: '/produtos',

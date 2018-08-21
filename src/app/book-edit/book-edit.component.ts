@@ -12,9 +12,9 @@ export class BookEditComponent implements OnInit {
 
   bookForm: FormGroup;
   id = '';
-  isbn = '';
-  title = '';
-  description = '';
+  idcanal = '';
+  sku = '';
+  quantidade = '';
   author = '';
 
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
@@ -22,9 +22,9 @@ export class BookEditComponent implements OnInit {
   ngOnInit() {
     this.getBook(this.route.snapshot.params['id']);
     this.bookForm = this.formBuilder.group({
-      'isbn' : [null, Validators.required],
-      'title' : [null, Validators.required],
-      'description' : [null, Validators.required],
+      'idcanal' : [null, Validators.required],
+      'sku' : [null, Validators.required],
+      'quantidade' : [null, Validators.required],
       'author' : [null, Validators.required],
     });
   }
@@ -33,9 +33,9 @@ export class BookEditComponent implements OnInit {
     this.api.getBook(id).subscribe(data => {
       this.id = data._id;
       this.bookForm.setValue({
-        isbn: data.isbn,
-        title: data.title,
-        description: data.description,
+        idcanal: data.idcanal,
+        sku: data.sku,
+        quantidade: data.quantidade,
         author: data.author,
       });
     });

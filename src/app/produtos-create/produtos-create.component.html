@@ -3,17 +3,17 @@
 </div>
 <form [formGroup]="bookForm" (ngSubmit)="onFormSubmit(bookForm.value)">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Id Canal" formControlName="isbn"
+    <input matInput placeholder="Id Canal" formControlName="idcanal"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!bookForm.get('isbn').valid && bookForm.get('isbn').touched">Please enter Id Canal</span>
+      <span *ngIf="!bookForm.get('idcanal').valid && bookForm.get('idcanal').touched">Please enter Id Canal</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Sku" formControlName="title"
+    <input matInput placeholder="Sku" formControlName="sku"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!bookForm.get('title').valid && bookForm.get('title').touched">Please enter Book Sku</span>
+      <span *ngIf="!bookForm.get('sku').valid && bookForm.get('sku').touched">Please enter Book Sku</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
@@ -24,10 +24,10 @@
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Data" formControlName="description"
+    <textarea matInput placeholder="Data" formControlName="quantidade"
            [errorStateMatcher]="matcher"></textarea>
     <mat-error>
-      <span *ngIf="!bookForm.get('description').valid && bookForm.get('description').touched">Please enter Book Data</span>
+      <span *ngIf="!bookForm.get('quantidade').valid && bookForm.get('quantidade').touched">Please enter Book Data</span>
     </mat-error>
   </mat-form-field>
   <div class="button-row">
